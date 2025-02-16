@@ -23,4 +23,15 @@ app.get('/example',
         console.log('I am example');
     }
 );
+    app.get('/example/:name',
+        function(request,response){
+            response.send('Hello '+request.params.name); 
+        }
+);
+app.post('/',
+    function(request,response){
+        response.send(request.body);
+        console.log(request.body);
+    }
+);
 module.exports = app;
